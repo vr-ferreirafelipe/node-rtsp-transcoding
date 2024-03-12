@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sua Página com JSMpeg</title>
+  </head>
+  <body>
+    <div>
+      <canvas
+        id="canvas"
+        width="1920"
+        height="1080"
+        style="display: block; width: 40%"
+      ></canvas>
+    </div>
+
+    <script type="text/javascript" src="jsmpeg.min.js"></script>
+    <script type="text/javascript">
+      // Certifique-se de incluir a biblioteca JSMpeg antes de usar
+
+      // Descomente esta linha se você estiver usando WebSocket
+      // var ws = new WebSocket('ws://localhost:9999');
+
+      // Certifique-se de ter a instância do player declarada com 'var'
+      let player = new JSMpeg.Player("ws://localhost:9999", {
+        canvas: this.streamingcanvas.nativeElement,
+        autoplay: true,
+        audio: false,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
